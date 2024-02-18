@@ -1,0 +1,32 @@
+{
+	"lwc": {
+		"modules": [
+			{
+				"dir": "$rootDir/src/modules"
+			},
+			{
+				"name": "hotkeys",
+				"path": "src/assets/hotkeys/hotkeys.js"
+			}
+		]
+	},
+	"routes": [
+		{
+			"id": "demo",
+			"path": "/",
+			"rootComponent": "palette/app"
+		}
+	],
+	"assets": [
+		{
+			"alias": "assetsDir",
+			"dir": "$rootDir/src/assets",
+			"urlPath": "/public/assets"
+		},
+		{
+			"alias": "favicon",
+			"file": "$rootDir/src/assets/favicon.ico",
+			"urlPath": "/favicon.ico"
+		}
+	]
+}

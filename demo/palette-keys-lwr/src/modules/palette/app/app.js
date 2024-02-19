@@ -70,6 +70,8 @@ export default class PaletteKeysDemo extends LightningElement {
 				default: true,
 				handler: () => {
 					alert('Your default logic to handle');	
+					let palette = this.template.querySelector('[data-id="PaletteKeys"]');
+					palette.resetDefault();
 				}
 			}
 		];

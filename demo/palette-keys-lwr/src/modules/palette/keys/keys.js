@@ -4,8 +4,8 @@ import hotkeys from "hotkeys";
 export default class Keys extends LightningElement {
 	@api placeholder = 'Type a command or search...'; // Search placeholder text
 	@api disableHotkeys = false; // If true will register all hotkey for all actions
-	@api hide_breadcrumbs = false; // Show or hide breadcrumbs on header
-	@api open_hot_key = 'cmd+k,ctrl+k'; // Open or hide shorcut
+	@api hideBreadcrumbs = false; // Show or hide breadcrumbs on header
+	@api openHotKey = 'cmd+k,ctrl+k'; // Open or hide shorcut
 	@api navigationUpHotkey = 'up,shift+tab,shift+k'; // Navigation Up hotkey
 	@api navigationDownHotkey = 'down,tab,shift+j'; // Navigation Down hotkey
 	@api closeHotkey = 'esc'; // Close hotkey
@@ -102,9 +102,17 @@ export default class Keys extends LightningElement {
 			this._actionMatches = this._flatData;
 		} else {
 			this._currentRoot = parent;
+			let actionMatches = [];
+			this._flatData.forEach((action) => {
+				if(action.children){
+					actionMatches = actionMatches.concat(action.children.filter((child) => child.parent === action.section));
+				}
+			});
+			this._actionMatches = actionMatches;
 		}
 
 		this._search = '';
+		this.show_default = false;
 
 		let header = this.template.querySelector("[data-id='palette_header']");
 		if(header){
@@ -113,8 +121,8 @@ export default class Keys extends LightningElement {
 	}
 
 	_registerInternalHotkeys() {
-		if (this.open_hot_key) {
-			hotkeys(this.open_hot_key, event => {
+		if (this.openHotKey) {
+			hotkeys(this.openHotKey, event => {
 				event.preventDefault();
 				this.visible ? this.close() : this.open();
 			});
@@ -206,8 +214,8 @@ export default class Keys extends LightningElement {
 	}
 
 	_unregisterInternalHotkeys() {
-		if (this.open_hot_key) {
-			hotkeys.unbind(this.open_hot_key);
+		if (this.openHotKey) {
+			hotkeys.unbind(this.openHotKey);
 		}
 
 		if (this.selectHotkey) {
@@ -304,6 +312,10 @@ export default class Keys extends LightningElement {
 			return;
 		}
 
+		if(this._currentRoot && this._search){
+			this.setParent(this._currentRoot);
+		}
+
 		if (action.children && ((_a = action.children) === null || _a === void 0 ? void 0 : _a.length) > 0) {
 			this._currentRoot = action.id;
 			this._search = '';
@@ -335,7 +347,9 @@ export default class Keys extends LightningElement {
 	};
 
 	filterActionsOnInput(){
-		const actionMatches = this._flatData.filter(action => {
+		const actionMatches = [];
+
+		this._flatData.forEach(action => {
 			var _a;
 			const regex = new RegExp(this._search, 'gi');
 
@@ -343,15 +357,25 @@ export default class Keys extends LightningElement {
 				const matcher = action.title.match(regex) || ((_a = action.keywords) === null || _a === void 0 ? void 0 : _a.match(regex));
 				if (!this._currentRoot && this._search) {
 					// global search for items on root
-					return matcher;
+					if(matcher){
+						actionMatches.push(action);
+					}
+				} else if (this._currentRoot && action.children) {
+					// search on children
+					action.children.forEach((child) => {
+						if(child.title && child.title.match(regex)){
+							actionMatches.push(child);
+						}
+					});
 				}
-				return action.parent === this._currentRoot && matcher;
 			}
-
-			return false;
 		});
 
-		const sections = actionMatches.reduce((entryMap, e) => entryMap.set(e.section, [...(entryMap.get(e.section) || []), e]), new Map());
+		const sections = actionMatches.reduce((entryMap, e) => {
+			const sectionKey = e.section !== undefined ? e.section : e.parent;
+			return entryMap.set(sectionKey, [...(entryMap.get(sectionKey) || []), e]);
+		}, new Map());
+
 		this._actionMatches = [...sections.values()].flat();
 		
 		let default_action = this.action_data.filter((action) => action.default);
@@ -362,12 +386,17 @@ export default class Keys extends LightningElement {
 		}
 	}
 
+	@api
+	resetDefault(){
+		this.show_default = false;
+	}
+
 	get groupedActions() {
 		let grouped_actions = [];
-		let sections = this._actionMatches.filter((action) => action.section && !action.default);
+		let sections = this._actionMatches.filter((action) => (action.section || action.parent) && !action.default);
 
 		if(this._currentRoot) {
-			let current_section = this._actionMatches.filter((action) => action.section === this._currentRoot);
+			let current_section = this._actionMatches.filter((action) => (action.section === this._currentRoot) || (action.parent === this._currentRoot));
 			let children = current_section.length && current_section[0].children ? current_section[0].children : [];
 			sections = sections.filter((action) => action.parent === this._currentRoot);
 			grouped_actions = [...sections, ...children];
@@ -376,7 +405,7 @@ export default class Keys extends LightningElement {
 		}
 
 		if(this.show_default){
-			grouped_actions = [this.action_data.filter((action) => action.default)];
+			grouped_actions = this.action_data.filter((action) => action.default);
 		}
 
 		this.grouped_actions = grouped_actions;

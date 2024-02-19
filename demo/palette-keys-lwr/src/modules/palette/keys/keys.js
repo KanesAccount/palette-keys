@@ -99,6 +99,7 @@ export default class Keys extends LightningElement {
 		if (!parent) {
 			this._currentRoot = undefined;
 			this._selected = undefined;
+			this._actionMatches = this._flatData;
 		} else {
 			this._currentRoot = parent;
 		}

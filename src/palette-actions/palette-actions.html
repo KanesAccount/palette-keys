@@ -1,0 +1,15 @@
+<template>
+	<div part={partStyle} class={actionClass} data-id="palette_action">
+		<!-- svg icon goes here - get from action.icon -->
+
+		<div class="palette-title">{action.title}</div>
+
+		<kbd class="palette-hotkeys">
+			<template for:each={split_hotkeys} for:item="key">
+				<div style="display: content" key={key}>
+					<kbd class="palette-hotkey">{key}</kbd>
+				</div>
+			</template>
+		</kbd>
+	</div>
+</template>

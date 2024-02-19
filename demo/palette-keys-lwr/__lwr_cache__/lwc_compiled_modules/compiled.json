@@ -1,0 +1,242 @@
+[
+  [
+    "example/app@0.0.1",
+    {
+      "ownHash": "e71b8892e7bf80ba61c29533468cc772",
+      "module": "./cache/example_app_0_0_1.js",
+      "moduleMeta": "./cache/example_app_0_0_1.meta.json"
+    }
+  ],
+  [
+    "lwr/esmLoader@0.11.13",
+    {
+      "ownHash": "6ceb9a24edd10a6d1fcea82ab9003afb",
+      "module": "./cache/lwr_esmLoader_0_11_13.js",
+      "moduleMeta": "./cache/lwr_esmLoader_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwr/preInit@0.11.13",
+    {
+      "ownHash": "f3a204ef43fb3057d910f80d7e9f9ba7",
+      "module": "./cache/lwr_preInit_0_11_13.js",
+      "moduleMeta": "./cache/lwr_preInit_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwr/hmr@0.11.13",
+    {
+      "ownHash": "b6c05a5d79ea66f651b367c2a6190189",
+      "module": "./cache/lwr_hmr_0_11_13.js",
+      "moduleMeta": "./cache/lwr_hmr_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwr/init@0.11.13",
+    {
+      "ownHash": "f30361ad8ff7af505bf4d465c8499181",
+      "module": "./cache/lwr_init_0_11_13.js",
+      "moduleMeta": "./cache/lwr_init_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwr/hmr#util/swap@0.11.13",
+    {
+      "ownHash": "b90e85947b9514fa4d53fbced946e451",
+      "module": "./cache/lwr_hmr_util_swap_0_11_13.js",
+      "moduleMeta": "./cache/lwr_hmr_util_swap_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwr/metrics@0.11.13",
+    {
+      "ownHash": "274c8343f810353bbad085a79709395f",
+      "module": "./cache/lwr_metrics_0_11_13.js",
+      "moduleMeta": "./cache/lwr_metrics_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwr/profiler@0.11.13",
+    {
+      "ownHash": "a152b8d35f12ca1b5147c5cd1ee155fb",
+      "module": "./cache/lwr_profiler_0_11_13.js",
+      "moduleMeta": "./cache/lwr_profiler_0_11_13.meta.json"
+    }
+  ],
+  [
+    "lwc@5.0.0",
+    {
+      "ownHash": "d96c3988d146634277310d291d6b30a2",
+      "module": "./cache/lwc_5_0_0.js",
+      "moduleMeta": "./cache/lwc_5_0_0.meta.json"
+    }
+  ],
+  [
+    "example/app#app.html@0.0.1",
+    {
+      "ownHash": "d3040985ae5b55609d05e021d47bb4f4",
+      "module": "./cache/example_app_app_html_0_0_1.js",
+      "moduleMeta": "./cache/example_app_app_html_0_0_1.meta.json"
+    }
+  ],
+  [
+    "example/app#app.css@0.0.1",
+    {
+      "ownHash": "85c881c185f08e541373b2b395ed488c",
+      "module": "./cache/example_app_app_css_0_0_1.js",
+      "moduleMeta": "./cache/example_app_app_css_0_0_1.meta.json"
+    }
+  ],
+  [
+    "example/app#app.scoped.css?scoped=true@0.0.1",
+    {
+      "ownHash": "13fcec3d73f055fccd306149598cb9b5",
+      "module": "./cache/example_app_app_scoped_css_scoped=true_0_0_1.js",
+      "moduleMeta": "./cache/example_app_app_scoped_css_scoped=true_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/app@0.0.1",
+    {
+      "ownHash": "e1a9260a9fe6edd55996035f4a18c12a",
+      "module": "./cache/palette_app_0_0_1.js",
+      "moduleMeta": "./cache/palette_app_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/app#app.html@0.0.1",
+    {
+      "ownHash": "7b21fc3c64c2612c7cc72a2947530ecc",
+      "module": "./cache/palette_app_app_html_0_0_1.js",
+      "moduleMeta": "./cache/palette_app_app_html_0_0_1.meta.json"
+    }
+  ],
+  [
+    "hotkeys@0.0.1",
+    {
+      "ownHash": "2bd689f7a7a8827a9b95442d78b4f21e",
+      "module": "./cache/hotkeys_0_0_1.js",
+      "moduleMeta": "./cache/hotkeys_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/app#app.css@0.0.1",
+    {
+      "ownHash": "c53802c32a31e874626308bef55b3ea9",
+      "module": "./cache/palette_app_app_css_0_0_1.js",
+      "moduleMeta": "./cache/palette_app_app_css_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/app#app.scoped.css?scoped=true@0.0.1",
+    {
+      "ownHash": "13fcec3d73f055fccd306149598cb9b5",
+      "module": "./cache/palette_app_app_scoped_css_scoped=true_0_0_1.js",
+      "moduleMeta": "./cache/palette_app_app_scoped_css_scoped=true_0_0_1.meta.json"
+    }
+  ],
+  [
+    "hotkeys#hotkeys.html@0.0.1",
+    {
+      "ownHash": "13fcec3d73f055fccd306149598cb9b5",
+      "module": "./cache/hotkeys_hotkeys_html_0_0_1.js",
+      "moduleMeta": "./cache/hotkeys_hotkeys_html_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/keys@0.0.1",
+    {
+      "ownHash": "78d911039f08152cf69654613d9fcdaf",
+      "module": "./cache/palette_keys_0_0_1.js",
+      "moduleMeta": "./cache/palette_keys_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/keys#keys.html@0.0.1",
+    {
+      "ownHash": "73c8f9d1e4ad8936dac6f1ef15228938",
+      "module": "./cache/palette_keys_keys_html_0_0_1.js",
+      "moduleMeta": "./cache/palette_keys_keys_html_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/keys#keys.css@0.0.1",
+    {
+      "ownHash": "a7a7d3766f73246ddc9e1883abd5ed5b",
+      "module": "./cache/palette_keys_keys_css_0_0_1.js",
+      "moduleMeta": "./cache/palette_keys_keys_css_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/keys#keys.scoped.css?scoped=true@0.0.1",
+    {
+      "ownHash": "13fcec3d73f055fccd306149598cb9b5",
+      "module": "./cache/palette_keys_keys_scoped_css_scoped=true_0_0_1.js",
+      "moduleMeta": "./cache/palette_keys_keys_scoped_css_scoped=true_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/header@0.0.1",
+    {
+      "ownHash": "6a842b2f2014a97e49eef8ddfee4f539",
+      "module": "./cache/palette_header_0_0_1.js",
+      "moduleMeta": "./cache/palette_header_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/actions@0.0.1",
+    {
+      "ownHash": "fabf4d33cd0680aa8ba01614b807f033",
+      "module": "./cache/palette_actions_0_0_1.js",
+      "moduleMeta": "./cache/palette_actions_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/header#header.html@0.0.1",
+    {
+      "ownHash": "1a03e1f63e8f4a74d15820f6ba2cd94b",
+      "module": "./cache/palette_header_header_html_0_0_1.js",
+      "moduleMeta": "./cache/palette_header_header_html_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/actions#actions.html@0.0.1",
+    {
+      "ownHash": "dae130af05c039b517e826e6afccbe9b",
+      "module": "./cache/palette_actions_actions_html_0_0_1.js",
+      "moduleMeta": "./cache/palette_actions_actions_html_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/header#header.css@0.0.1",
+    {
+      "ownHash": "bb179271de2a1012990ebb078205effb",
+      "module": "./cache/palette_header_header_css_0_0_1.js",
+      "moduleMeta": "./cache/palette_header_header_css_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/header#header.scoped.css?scoped=true@0.0.1",
+    {
+      "ownHash": "13fcec3d73f055fccd306149598cb9b5",
+      "module": "./cache/palette_header_header_scoped_css_scoped=true_0_0_1.js",
+      "moduleMeta": "./cache/palette_header_header_scoped_css_scoped=true_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/actions#actions.css@0.0.1",
+    {
+      "ownHash": "28887d85d5a32f23c847c00099399e03",
+      "module": "./cache/palette_actions_actions_css_0_0_1.js",
+      "moduleMeta": "./cache/palette_actions_actions_css_0_0_1.meta.json"
+    }
+  ],
+  [
+    "palette/actions#actions.scoped.css?scoped=true@0.0.1",
+    {
+      "ownHash": "13fcec3d73f055fccd306149598cb9b5",
+      "module": "./cache/palette_actions_actions_scoped_css_scoped=true_0_0_1.js",
+      "moduleMeta": "./cache/palette_actions_actions_scoped_css_scoped=true_0_0_1.meta.json"
+    }
+  ]
+]

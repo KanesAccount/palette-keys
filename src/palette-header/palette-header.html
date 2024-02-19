@@ -1,0 +1,38 @@
+<template>
+	<template if:false={hide_breadcrumbs}>
+		<div class="breadcrumb-list">
+			<button
+				tabindex="-1"
+				onclick={selectParent}
+				class="breadcrumb"
+			>
+				{breadcrumbHome}
+			</button>
+			<template for:each={breadcrumbs} for:item="breadcrumb">
+				<button
+					key={breadcrumb}
+					tabindex="-1"
+					data-breadcrumb={breadcrumb}
+					onclick={selectParent}
+					class="breadcrumb"
+				>
+					{breadcrumb}
+				</button>
+			</template>
+		</div>
+	</template>
+	<div part="palette-input-wrapper" class="search-wrapper">
+		<input
+			part="palette-input"
+			type="text"
+			id="search"
+			data-id="palette_input"
+			spellcheck="false"
+			autocomplete="off"
+			onchange={_handleInput}
+			placeholder={placeholder}
+			class="search"
+			value="test"
+		/>
+	</div>
+</template>

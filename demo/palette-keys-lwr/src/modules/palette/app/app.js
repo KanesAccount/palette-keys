@@ -59,7 +59,6 @@ export default class PaletteKeysDemo extends LightningElement {
 					// open menu if closed. Because you can open directly that menu from it's hotkey
 					let palette = this.template.querySelector('[data-id="PaletteKeys"]');
 					palette.open({ parent: 'Theme' });
-					//this.resetDataActions();
 					// if menu opened that prevent it from closing on select that action, no need if you don't have child actions
 					return {keepOpen: true};
 				},
@@ -75,7 +74,5 @@ export default class PaletteKeysDemo extends LightningElement {
 				}
 			}
 		];
-
-		this.filtered_data_actions = this.action_data;
 	}
 }

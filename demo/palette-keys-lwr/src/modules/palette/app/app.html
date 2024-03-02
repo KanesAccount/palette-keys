@@ -2,7 +2,7 @@
     <main class="flex items-center justify-center w-full h-full">
 		<button class=" bg-gray-50 m-auto text-gray-400 text-2xl hover:text-gray-900 border border-gray-200 rounded-xl px-4 py-2" onclick={openPalette}>⌘ + K</button>
 		<template if:true={action_data}>
-			<palette-keys data-id="PaletteKeys" action_data={filtered_data_actions}></palette-keys>
+			<palette-keys data-id="PaletteKeys" action_data={action_data}></palette-keys>
 		</template>
 	</main>
 </template>

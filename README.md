@@ -23,70 +23,70 @@ Once the processes have finished, open the site at http://localhost:3000
 Add the tag to your HTML, and set `action_data`.
 
 ```html
-	<palette-keys data-id="PaletteKeys" action_data={action_data}></palette-keys>
+<palette-keys data-id="PaletteKeys" action_data={action_data}></palette-keys>
 ```
 
 ```html
 <script>
-	this.action_data = [
-		{
-			id: 'Projects',
-			title: 'Open Projects',
-			hotkey: 'ctrl+N',
-			icon: 'apps',
-			section: 'Projects',
-			handler: () => {
-				// auto registered the above hotkey with this handler
-				alert('Your logic to handle');
-			},
+this.action_data = [
+	{
+		id: 'Projects',
+		title: 'Open Projects',
+		hotkey: 'ctrl+N',
+		icon: 'apps',
+		section: 'Projects',
+		handler: () => {
+			// auto registered the above hotkey with this handler
+			alert('Your logic to handle');
 		},
-		{
-			id: 'theme',
-			title: 'Change theme...',
-			icon: 'desktop_windows',
-			section: 'Theme',
-			children: [
-				{
-					id: 'light_mode',
-					title: 'Light Mode',
-					parent: 'Theme',
-					handler: () => {
-						let palette = this.template.querySelector('[data-id="PaletteKeys"]');
-						palette.classList.remove('dark');
-						return {keepOpen: true};
-					},
+	},
+	{
+		id: 'theme',
+		title: 'Change theme...',
+		icon: 'desktop_windows',
+		section: 'Theme',
+		children: [
+			{
+				id: 'light_mode',
+				title: 'Light Mode',
+				parent: 'Theme',
+				handler: () => {
+					let palette = this.template.querySelector('[data-id="PaletteKeys"]');
+					palette.classList.remove('dark');
+					return {keepOpen: true};
 				},
-				{
-					id: 'dark_mode',
-					title: 'Dark Mode',
-					parent: 'Theme',
-					handler: () => {
-						let palette = this.template.querySelector('[data-id="PaletteKeys"]');
-						palette.classList.add('dark');
-						return {keepOpen: true};
-					},
-				},
-			],
-			hotkey: 'ctrl+T',
-			handler: () => {
-				// open menu if closed. Because you can open directly that menu from it's hotkey
-				let palette = this.template.querySelector('[data-id="PaletteKeys"]');
-				palette.open({ parent: 'Theme' });
-				// if menu opened that prevent it from closing on select that action, no need if you don't have child actions
-				return {keepOpen: true};
 			},
+			{
+				id: 'dark_mode',
+				title: 'Dark Mode',
+				parent: 'Theme',
+				handler: () => {
+					let palette = this.template.querySelector('[data-id="PaletteKeys"]');
+					palette.classList.add('dark');
+					return {keepOpen: true};
+				},
+			},
+		],
+		hotkey: 'ctrl+T',
+		handler: () => {
+			// open menu if closed. Because you can open directly that menu from it's hotkey
+			let palette = this.template.querySelector('[data-id="PaletteKeys"]');
+			palette.open({ parent: 'Theme' });
+			// if menu opened that prevent it from closing on select that action, no need if you don't have child actions
+			return {keepOpen: true};
 		},
-		{
-			id: 'default',
-			title: 'Default Action',
-			default: true,
-			handler: () => {
-				alert('Your default logic to handle');	
-				let palette = this.template.querySelector('[data-id="PaletteKeys"]');
-				palette.resetDefault();
-			}
+	},
+	{
+		id: 'default',
+		title: 'Default Action',
+		default: true,
+		handler: () => {
+			alert('Your default logic to handle');	
+			let palette = this.template.querySelector('[data-id="PaletteKeys"]');
+			palette.resetDefault();
 		}
-	];
+	}
+];
 </script>
 ```
 ## Attributes
@@ -167,9 +167,9 @@ palette.addEventListener('selected', (event) => {
 ```
 
 ## Themes
-Component supports a dark theme out-of-box. You just need to add a class. 
+Component supports a dark theme out-of-box. You just need to add a class.
 ```html
-<palette-keys class="dark"></palette-keys>
+<palette-keys class="dark" data-id="PaletteKeys" action_data={action_data}></palette-keys>
 ```
 
 If you need more style control, use any of the CSS variables below.
@@ -247,7 +247,7 @@ palette-keys::part(palette-input-wrapper) {
 }
 ```
 
-### Icons
+### Icons (WIP)
 
 If you want custom icons, you can use `svg` or `img` to insert it with an `icon` property for action with `palette-icon` class.
 Example:
@@ -270,7 +270,7 @@ palette-keys {
 
 ### Change or hide footer
 ```html
-<palette-keys> 
+<palette-keys data-id="PaletteKeys" action_data={action_data}> 
   <div slot="footer">You can use a custom footer or empty div to hide it</div>
 </palette-keys>
 ```
